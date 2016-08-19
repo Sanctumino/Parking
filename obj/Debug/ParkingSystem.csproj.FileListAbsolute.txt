@@ -1,0 +1,11 @@
+D:\Parking\ParkingSystem\bin\Debug\ParkingSystem.exe.config
+D:\Parking\ParkingSystem\bin\Debug\ParkingSystem.exe
+D:\Parking\ParkingSystem\bin\Debug\ParkingSystem.pdb
+D:\Parking\ParkingSystem\obj\Debug\ParkingSystem.csprojResolveAssemblyReference.cache
+D:\Parking\ParkingSystem\obj\Debug\ParkingSystem.Authorization.resources
+D:\Parking\ParkingSystem\obj\Debug\ParkingSystem.Properties.Resources.resources
+D:\Parking\ParkingSystem\obj\Debug\ParkingSystem.csproj.GenerateResource.Cache
+D:\Parking\ParkingSystem\obj\Debug\ParkingSystem.exe
+D:\Parking\ParkingSystem\obj\Debug\ParkingSystem.pdb
+D:\Parking\ParkingSystem\obj\Debug\ParkingSystem.MainForm.resources
+D:\Parking\ParkingSystem\obj\Debug\ParkingSystem.PlaceUC.resources
