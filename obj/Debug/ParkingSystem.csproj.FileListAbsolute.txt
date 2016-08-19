@@ -9,3 +9,6 @@ D:\Parking\ParkingSystem\obj\Debug\ParkingSystem.exe
 D:\Parking\ParkingSystem\obj\Debug\ParkingSystem.pdb
 D:\Parking\ParkingSystem\obj\Debug\ParkingSystem.MainForm.resources
 D:\Parking\ParkingSystem\obj\Debug\ParkingSystem.PlaceUC.resources
+d:\GIT\bin\Debug\ParkingSystem.exe.config
+d:\GIT\obj\Debug\ParkingSystem.exe
+d:\GIT\obj\Debug\ParkingSystem.pdb
