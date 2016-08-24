@@ -12,3 +12,11 @@ D:\Parking\ParkingSystem\obj\Debug\ParkingSystem.PlaceUC.resources
 d:\GIT\bin\Debug\ParkingSystem.exe.config
 d:\GIT\obj\Debug\ParkingSystem.exe
 d:\GIT\obj\Debug\ParkingSystem.pdb
+d:\GIT\bin\Debug\ParkingSystem.exe
+d:\GIT\bin\Debug\ParkingSystem.pdb
+d:\GIT\obj\Debug\ParkingSystem.csprojResolveAssemblyReference.cache
+d:\GIT\obj\Debug\ParkingSystem.Authorization.resources
+d:\GIT\obj\Debug\ParkingSystem.MainForm.resources
+d:\GIT\obj\Debug\ParkingSystem.PlaceUC.resources
+d:\GIT\obj\Debug\ParkingSystem.Properties.Resources.resources
+d:\GIT\obj\Debug\ParkingSystem.csproj.GenerateResource.Cache

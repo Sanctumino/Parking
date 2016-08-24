@@ -17,7 +17,7 @@ CREATE TABLE ApplicationStatuses (
 
 CREATE TABLE ApprovedApplications ( 
 	PersonID smallint,
-	PlaceNumber smallint,
+	PlaceID smallint,
 	ApprovedApplicationDate datetime,
 	ApprovedDateFrom date,
 	ApprovedDateTo date
@@ -34,6 +34,7 @@ CREATE TABLE Cars (
 ;
 
 CREATE TABLE EventLog ( 
+	ID int NOT NULL,
 	Login nvarchar(50),
 	EventText nvarchar(300),
 	EventDate datetime
@@ -41,7 +42,7 @@ CREATE TABLE EventLog (
 ;
 
 CREATE TABLE FreePlaces ( 
-	PlaceNumber smallint NOT NULL,
+	PlaceID smallint NOT NULL,
 	DateFrom date,
 	DateTo date
 )
@@ -62,10 +63,10 @@ CREATE TABLE Notifications (
 ;
 
 CREATE TABLE Persons ( 
-	ID smallint identity(1,1)  NOT NULL,
+	ID smallint identity(1,1)  NOT FOR REPLICATION  NOT NULL,
 	Lastname nvarchar(50),
 	Firstname nvarchar(50),
-	PlaceNumber smallint,
+	PlaceID smallint,
 	ReleaseFlag bit,
 	LeaveDateFrom date,
 	LeaveDateTo date
@@ -73,9 +74,11 @@ CREATE TABLE Persons (
 ;
 
 CREATE TABLE Places ( 
-	Number smallint identity(1,1)  NOT NULL,
+	ID smallint NOT NULL,
 	PersonID smallint,
-	StatusID tinyint
+	StatusID tinyint,
+	DateFrom date,
+	DateTo date
 )
 ;
 
@@ -86,16 +89,8 @@ CREATE TABLE PlaceStatuses (
 ;
 
 CREATE TABLE Roles ( 
-	ID tinyint NOT NULL,
+	ID tinyint identity(1,1)  NOT NULL,
 	Description nvarchar(20)
-)
-;
-
-CREATE TABLE TemporaryPlaces ( 
-	PersonID smallint,
-	PlaceNumber smallint,
-	DateFrom date,
-	DateTo date
 )
 ;
 
@@ -120,6 +115,10 @@ ALTER TABLE Cars ADD CONSTRAINT PK_Cars
 	PRIMARY KEY CLUSTERED (ID)
 ;
 
+ALTER TABLE EventLog ADD CONSTRAINT PK_EventLog 
+	PRIMARY KEY CLUSTERED (ID)
+;
+
 ALTER TABLE MessageStatuses ADD CONSTRAINT PK_MessageStatuses 
 	PRIMARY KEY CLUSTERED (ID)
 ;
@@ -129,7 +128,7 @@ ALTER TABLE Persons ADD CONSTRAINT PK_Persons
 ;
 
 ALTER TABLE Places ADD CONSTRAINT PK_Places 
-	PRIMARY KEY CLUSTERED (Number)
+	PRIMARY KEY CLUSTERED (ID)
 ;
 
 ALTER TABLE PlaceStatuses ADD CONSTRAINT PK_PlaceStatuses 
@@ -155,7 +154,7 @@ ALTER TABLE ApprovedApplications ADD CONSTRAINT FK_ApprovedApplications_Persons
 ;
 
 ALTER TABLE ApprovedApplications ADD CONSTRAINT FK_ApprovedApplications_Places 
-	FOREIGN KEY (PlaceNumber) REFERENCES Places (Number)
+	FOREIGN KEY (PlaceID) REFERENCES Places (ID)
 ;
 
 ALTER TABLE Cars ADD CONSTRAINT FK_Cars_Persons 
@@ -170,20 +169,16 @@ ALTER TABLE Notifications ADD CONSTRAINT FK_Notifications_Persons
 	FOREIGN KEY (PersonID) REFERENCES Persons (ID)
 ;
 
+ALTER TABLE Persons ADD CONSTRAINT FK_Persons_Places 
+	FOREIGN KEY (PlaceID) REFERENCES Places (ID)
+;
+
 ALTER TABLE Places ADD CONSTRAINT FK_Places_Persons 
 	FOREIGN KEY (PersonID) REFERENCES Persons (ID)
 ;
 
 ALTER TABLE Places ADD CONSTRAINT FK_Places_PlaceStatuses 
 	FOREIGN KEY (StatusID) REFERENCES PlaceStatuses (ID)
-;
-
-ALTER TABLE TemporaryPlaces ADD CONSTRAINT FK_TemporaryPlaces_Persons 
-	FOREIGN KEY (PersonID) REFERENCES Persons (ID)
-;
-
-ALTER TABLE TemporaryPlaces ADD CONSTRAINT FK_TemporaryPlaces_Places 
-	FOREIGN KEY (PlaceNumber) REFERENCES Places (Number)
 ;
 
 ALTER TABLE Users ADD CONSTRAINT FK_Users_Persons 
