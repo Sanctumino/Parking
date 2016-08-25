@@ -119,12 +119,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label DateFromLabel;
-        private System.Windows.Forms.Label DateToLabel;
         private System.Windows.Forms.Button AbandonButton;
         private System.Windows.Forms.Button AddCarButton;
         private System.Windows.Forms.Button TempReleaseButton;
         public System.Windows.Forms.Label PlaceNumberLabel;
         public System.Windows.Forms.Label PlaceStatusLabel;
+        public System.Windows.Forms.Label DateFromLabel;
+        public System.Windows.Forms.Label DateToLabel;
     }
 }

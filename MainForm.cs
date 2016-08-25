@@ -18,6 +18,8 @@ namespace ParkingSystem
         {
             InitializeComponent();
             Tree.ExpandAll();
+            //Tree.Nodes[0].Nodes[3].Remove(); --Удаление определенного узла
+
         }
 
         private void Tree_AfterSelect(object sender, TreeViewEventArgs e)
@@ -26,9 +28,6 @@ namespace ParkingSystem
             {
                 case "Place":
                     {
-                      /* PlaceUC PlaceUC = new PlaceUC();
-                       splitContainer.Panel2.Controls.Clear();
-                       splitContainer.Panel2.Controls.Add(PlaceUC);*/
                        PlaceInfoLoad();
                     }
                     break;
@@ -72,8 +71,10 @@ namespace ParkingSystem
                 PlaceUC PlaceUC = new PlaceUC();
                 splitContainer.Panel2.Controls.Clear();
                 splitContainer.Panel2.Controls.Add(PlaceUC);
-                PlaceUC.PlaceNumberLabel.Text = ds.Tables[0].Rows[0][0].ToString();
-                PlaceUC.PlaceStatusLabel.Text = ds.Tables[0].Rows[0][1].ToString();
+                PlaceUC.PlaceNumberLabel.Text ="Место: " + ds.Tables[0].Rows[0][0].ToString();
+                PlaceUC.PlaceStatusLabel.Text = "Статус: " + ds.Tables[0].Rows[0][1].ToString();
+                PlaceUC.DateFromLabel.Text = "Дата с: " + ds.Tables[0].Rows[0][2].ToString();
+                PlaceUC.DateToLabel.Text = "Дата по: " + ds.Tables[0].Rows[0][3].ToString();
             }
             finally
             {

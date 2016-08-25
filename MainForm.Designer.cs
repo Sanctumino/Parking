@@ -85,6 +85,7 @@
             this.ClientSize = new System.Drawing.Size(692, 373);
             this.Controls.Add(this.splitContainer);
             this.Name = "MainForm";
+            this.Text = "Система парковки";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.splitContainer.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
