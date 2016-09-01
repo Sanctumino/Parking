@@ -97,6 +97,6 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer;
-        private System.Windows.Forms.TreeView Tree;
+        public System.Windows.Forms.TreeView Tree;
     }
 }

@@ -14,32 +14,40 @@ namespace ParkingSystem
 {
     public partial class Authorization : Form
     {
+        public static string PersonID, RoleID;
         public Authorization()
         {
             InitializeComponent();
         }
         private void login() //Авторизация11123
         {
-            
-            string constring = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
-            SqlConnection con = new SqlConnection(constring);
+            string ConStr = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
+            SqlConnection con = new SqlConnection(ConStr);
+            SqlDataReader reader;
             try
             {
                
                 SqlCommand cmd = new SqlCommand();
                 SqlDataAdapter da = new SqlDataAdapter();
                 DataSet ds = new DataSet();
-                cmd.CommandText = @"SELECT * FROM Users WHERE Login='" + UsernameTB.Text + "'AND Password='" + PasswordTB.Text + "';";
-                con.Open();
+                cmd.CommandText = "Authorization";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Username", UsernameTB.Text);
+                cmd.Parameters.AddWithValue("@Password", PasswordTB.Text);
                 cmd.Connection = con;
+                con.Open();
+                reader = cmd.ExecuteReader();
                 da.SelectCommand = cmd;
-                da.Fill(ds, "0");
-                int count = ds.Tables[0].Rows.Count;
-                if (count == 1)
+                reader.Close();
+                da.Fill(ds, "Parking");
+                if (ds.Tables[0].Rows[0][2].ToString() == "")
                 {
-                    Authorization.ActiveForm.Hide();
+                    PersonID = ds.Tables[0].Rows[0][0].ToString();
+                    RoleID = ds.Tables[0].Rows[0][1].ToString();
+                    ActiveForm.Hide();
                     MainForm MainForm = new MainForm();
                     MainForm.Show();
+                    
                 }
                 else
                 {

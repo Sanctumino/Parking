@@ -17,9 +17,12 @@ namespace ParkingSystem
         public MainForm()
         {
             InitializeComponent();
+            if (Authorization.RoleID == "1")
+            {
+                Tree.Nodes[0].Nodes["Log"].Remove(); //Удаление определенного узла
+                Tree.Nodes[0].Nodes["Parking"].Remove();
+            }
             Tree.ExpandAll();
-            //Tree.Nodes[0].Nodes[3].Remove(); --Удаление определенного узла
-
         }
 
         private void Tree_AfterSelect(object sender, TreeViewEventArgs e)
