@@ -31,7 +31,7 @@ namespace ParkingSystem
             {
                 case "Place":
                     {
-                       PlaceInfoLoad();
+                      PlaceInfoLoad();
                     }
                     break;
                 case "Application":
@@ -56,34 +56,91 @@ namespace ParkingSystem
         {
             string ConStr = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
             SqlConnection con = new SqlConnection(ConStr);
-            SqlDataReader reader;
+            SqlDataReader PlaceInfoReader;
+            SqlDataReader CarInfoReader;
             try
             {
-                SqlCommand cmd = new SqlCommand();
-                SqlDataAdapter da = new SqlDataAdapter();
-                DataSet ds = new DataSet();
-                cmd.CommandText = "PlaceInfoLoad";
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@PersonID", 1);
-                cmd.Connection = con;
+                //Объявление параметров для загрузки информации по парковочному месту
+                SqlCommand PlaceInfoSQLCommand = new SqlCommand();
+                SqlDataAdapter PlaceInfoDataAdapter = new SqlDataAdapter();
+                DataSet PlaceInfoDataSet = new DataSet();
+
+                //Объявление параметров для загрузки информации по машинам пользователя
+                SqlCommand CarInfoSQLCommand = new SqlCommand();
+                SqlDataAdapter CarInfoDataAdapter = new SqlDataAdapter();
+                DataSet CarInfoDataSet = new DataSet();
+
+                //Выборка информации по парковочному месту
+                PlaceInfoSQLCommand.CommandText = "PlaceInfoLoad";
+                PlaceInfoSQLCommand.CommandType = CommandType.StoredProcedure;
+                PlaceInfoSQLCommand.Parameters.AddWithValue("@PersonID", Authorization.PersonID);
+                PlaceInfoSQLCommand.Connection = con;
                 con.Open();
-                reader = cmd.ExecuteReader();
-                da.SelectCommand = cmd;
-                reader.Close();
-                da.Fill(ds, "Parking");
+                PlaceInfoReader = PlaceInfoSQLCommand.ExecuteReader();
+                PlaceInfoDataAdapter.SelectCommand = PlaceInfoSQLCommand;
+                PlaceInfoReader.Close();
+                PlaceInfoDataAdapter.Fill(PlaceInfoDataSet, "Parking");
+
+                //Выборка информации по машинам
+                CarInfoSQLCommand.CommandText = "CarInfoLoad";
+                CarInfoSQLCommand.CommandType = CommandType.StoredProcedure;
+                CarInfoSQLCommand.Parameters.AddWithValue("@PersonID", Authorization.PersonID);
+                CarInfoSQLCommand.Connection = con;
+                CarInfoReader = CarInfoSQLCommand.ExecuteReader();
+                CarInfoDataAdapter.SelectCommand = CarInfoSQLCommand;
+                CarInfoReader.Close();
+                CarInfoDataAdapter.Fill(CarInfoDataSet, "Parking");
+
+                //Подключение User Control для отображения информации о парковочном месте и машинам пользователя
                 PlaceUC PlaceUC = new PlaceUC();
                 splitContainer.Panel2.Controls.Clear();
                 splitContainer.Panel2.Controls.Add(PlaceUC);
-                PlaceUC.PlaceNumberLabel.Text ="Место: " + ds.Tables[0].Rows[0][0].ToString();
-                PlaceUC.PlaceStatusLabel.Text = "Статус: " + ds.Tables[0].Rows[0][1].ToString();
-                PlaceUC.DateFromLabel.Text = "Дата с: " + ds.Tables[0].Rows[0][2].ToString();
-                PlaceUC.DateToLabel.Text = "Дата по: " + ds.Tables[0].Rows[0][3].ToString();
+                PlaceUC.PlaceNumberLabel.Text ="Место: " + PlaceInfoDataSet.Tables[0].Rows[0][0].ToString();
+                PlaceUC.PlaceStatusLabel.Text = "Статус: " + PlaceInfoDataSet.Tables[0].Rows[0][1].ToString();
+                PlaceUC.DateFromLabel.Text = "Дата с: " + PlaceInfoDataSet.Tables[0].Rows[0][2].ToString();
+                PlaceUC.DateToLabel.Text = "Дата по: " + PlaceInfoDataSet.Tables[0].Rows[0][3].ToString();
+                PlaceUC.CarDGV.DataSource = CarInfoDataSet.Tables[0];
+                PlaceUC.CarDGV.Columns[0].HeaderCell.Value = "Марка";
+                PlaceUC.CarDGV.Columns[1].HeaderCell.Value = "Модель";
+                PlaceUC.CarDGV.Columns[2].HeaderCell.Value = "Регистрационный номер";
             }
             finally
             {
                 con.Close();
             }
         }
+
+        private void CarInfoLoad()
+        {
+            string ConStr = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
+            SqlConnection con = new SqlConnection(ConStr);
+            SqlDataReader CarInfoReader;
+            try
+            {
+                SqlCommand CarInfoSQLCommand = new SqlCommand();
+                SqlDataAdapter CarInfoDataAdapter = new SqlDataAdapter();
+                DataSet CarInfoDataSet = new DataSet();
+                CarInfoSQLCommand.CommandText = "CarInfoLoad";
+                CarInfoSQLCommand.CommandType = CommandType.StoredProcedure;
+                CarInfoSQLCommand.Parameters.AddWithValue("@PersonID", Authorization.PersonID);
+                CarInfoSQLCommand.Connection = con;
+                con.Open();
+                CarInfoReader = CarInfoSQLCommand.ExecuteReader();
+                CarInfoDataAdapter.SelectCommand = CarInfoSQLCommand;
+                CarInfoReader.Close();
+                CarInfoDataAdapter.Fill(CarInfoDataSet, "Parking");
+                PlaceUC PlaceUC = new PlaceUC();
+                splitContainer.Panel2.Controls.Clear();
+                splitContainer.Panel2.Controls.Add(PlaceUC);
+                PlaceUC.CarDGV.DataSource = CarInfoDataSet.Tables[0];
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
