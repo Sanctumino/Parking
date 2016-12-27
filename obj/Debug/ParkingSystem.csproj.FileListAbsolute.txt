@@ -20,3 +20,4 @@ d:\GIT\obj\Debug\ParkingSystem.MainForm.resources
 d:\GIT\obj\Debug\ParkingSystem.PlaceUC.resources
 d:\GIT\obj\Debug\ParkingSystem.Properties.Resources.resources
 d:\GIT\obj\Debug\ParkingSystem.csproj.GenerateResource.Cache
+d:\GIT\obj\Debug\ParkingSystem.ChooseLeaveDatesForm.resources

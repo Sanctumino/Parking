@@ -109,7 +109,8 @@ namespace ParkingSystem
                 con.Close();
             }
         }
-
+        
+        //Закгрузка информации о машинах пользователя
         private void CarInfoLoad()
         {
             string ConStr = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;

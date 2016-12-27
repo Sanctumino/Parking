@@ -32,14 +32,14 @@
             this.PlaceStatusLabel = new System.Windows.Forms.Label();
             this.DateFromLabel = new System.Windows.Forms.Label();
             this.DateToLabel = new System.Windows.Forms.Label();
-            this.AbandonButton = new System.Windows.Forms.Button();
-            this.TempReleaseButton = new System.Windows.Forms.Button();
+            this.AbandonPlaceButton = new System.Windows.Forms.Button();
+            this.TempReleasePlaceButton = new System.Windows.Forms.Button();
             this.PlaceManageGroupBox = new System.Windows.Forms.GroupBox();
             this.CarManageGroupBox = new System.Windows.Forms.GroupBox();
             this.CarDGV = new System.Windows.Forms.DataGridView();
-            this.DeleteCar = new System.Windows.Forms.Button();
-            this.EditCar = new System.Windows.Forms.Button();
-            this.AddCar = new System.Windows.Forms.Button();
+            this.DeleteCarButton = new System.Windows.Forms.Button();
+            this.EditCarButton = new System.Windows.Forms.Button();
+            this.AddCarButton = new System.Windows.Forms.Button();
             this.PlaceManageGroupBox.SuspendLayout();
             this.CarManageGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CarDGV)).BeginInit();
@@ -81,30 +81,32 @@
             this.DateToLabel.TabIndex = 3;
             this.DateToLabel.Text = "Дата по:";
             // 
-            // AbandonButton
+            // AbandonPlaceButton
             // 
-            this.AbandonButton.Location = new System.Drawing.Point(18, 69);
-            this.AbandonButton.Name = "AbandonButton";
-            this.AbandonButton.Size = new System.Drawing.Size(75, 23);
-            this.AbandonButton.TabIndex = 4;
-            this.AbandonButton.Text = "Отказаться";
-            this.AbandonButton.UseVisualStyleBackColor = true;
+            this.AbandonPlaceButton.Location = new System.Drawing.Point(18, 69);
+            this.AbandonPlaceButton.Name = "AbandonPlaceButton";
+            this.AbandonPlaceButton.Size = new System.Drawing.Size(75, 23);
+            this.AbandonPlaceButton.TabIndex = 4;
+            this.AbandonPlaceButton.Text = "Отказаться";
+            this.AbandonPlaceButton.UseVisualStyleBackColor = true;
+            this.AbandonPlaceButton.Click += new System.EventHandler(this.AbandonPlaceButton_Click);
             // 
-            // TempReleaseButton
+            // TempReleasePlaceButton
             // 
-            this.TempReleaseButton.Location = new System.Drawing.Point(115, 69);
-            this.TempReleaseButton.Name = "TempReleaseButton";
-            this.TempReleaseButton.Size = new System.Drawing.Size(128, 23);
-            this.TempReleaseButton.TabIndex = 6;
-            this.TempReleaseButton.Text = "Временно освободить";
-            this.TempReleaseButton.UseVisualStyleBackColor = true;
+            this.TempReleasePlaceButton.Location = new System.Drawing.Point(115, 69);
+            this.TempReleasePlaceButton.Name = "TempReleasePlaceButton";
+            this.TempReleasePlaceButton.Size = new System.Drawing.Size(128, 23);
+            this.TempReleasePlaceButton.TabIndex = 6;
+            this.TempReleasePlaceButton.Text = "Временно освободить";
+            this.TempReleasePlaceButton.UseVisualStyleBackColor = true;
+            this.TempReleasePlaceButton.Click += new System.EventHandler(this.TempReleasePlaceButton_Click);
             // 
             // PlaceManageGroupBox
             // 
-            this.PlaceManageGroupBox.Controls.Add(this.TempReleaseButton);
+            this.PlaceManageGroupBox.Controls.Add(this.TempReleasePlaceButton);
             this.PlaceManageGroupBox.Controls.Add(this.DateToLabel);
             this.PlaceManageGroupBox.Controls.Add(this.DateFromLabel);
-            this.PlaceManageGroupBox.Controls.Add(this.AbandonButton);
+            this.PlaceManageGroupBox.Controls.Add(this.AbandonPlaceButton);
             this.PlaceManageGroupBox.Controls.Add(this.PlaceStatusLabel);
             this.PlaceManageGroupBox.Controls.Add(this.PlaceNumberLabel);
             this.PlaceManageGroupBox.Location = new System.Drawing.Point(3, 3);
@@ -117,9 +119,9 @@
             // CarManageGroupBox
             // 
             this.CarManageGroupBox.Controls.Add(this.CarDGV);
-            this.CarManageGroupBox.Controls.Add(this.DeleteCar);
-            this.CarManageGroupBox.Controls.Add(this.EditCar);
-            this.CarManageGroupBox.Controls.Add(this.AddCar);
+            this.CarManageGroupBox.Controls.Add(this.DeleteCarButton);
+            this.CarManageGroupBox.Controls.Add(this.EditCarButton);
+            this.CarManageGroupBox.Controls.Add(this.AddCarButton);
             this.CarManageGroupBox.Location = new System.Drawing.Point(4, 117);
             this.CarManageGroupBox.Name = "CarManageGroupBox";
             this.CarManageGroupBox.Size = new System.Drawing.Size(546, 253);
@@ -145,32 +147,32 @@
             this.CarDGV.Size = new System.Drawing.Size(533, 197);
             this.CarDGV.TabIndex = 3;
             // 
-            // DeleteCar
+            // DeleteCarButton
             // 
-            this.DeleteCar.Location = new System.Drawing.Point(215, 20);
-            this.DeleteCar.Name = "DeleteCar";
-            this.DeleteCar.Size = new System.Drawing.Size(75, 23);
-            this.DeleteCar.TabIndex = 2;
-            this.DeleteCar.Text = "Удалить";
-            this.DeleteCar.UseVisualStyleBackColor = true;
+            this.DeleteCarButton.Location = new System.Drawing.Point(215, 20);
+            this.DeleteCarButton.Name = "DeleteCarButton";
+            this.DeleteCarButton.Size = new System.Drawing.Size(75, 23);
+            this.DeleteCarButton.TabIndex = 2;
+            this.DeleteCarButton.Text = "Удалить";
+            this.DeleteCarButton.UseVisualStyleBackColor = true;
             // 
-            // EditCar
+            // EditCarButton
             // 
-            this.EditCar.Location = new System.Drawing.Point(101, 20);
-            this.EditCar.Name = "EditCar";
-            this.EditCar.Size = new System.Drawing.Size(98, 23);
-            this.EditCar.TabIndex = 1;
-            this.EditCar.Text = "Редактировать";
-            this.EditCar.UseVisualStyleBackColor = true;
+            this.EditCarButton.Location = new System.Drawing.Point(101, 20);
+            this.EditCarButton.Name = "EditCarButton";
+            this.EditCarButton.Size = new System.Drawing.Size(98, 23);
+            this.EditCarButton.TabIndex = 1;
+            this.EditCarButton.Text = "Редактировать";
+            this.EditCarButton.UseVisualStyleBackColor = true;
             // 
-            // AddCar
+            // AddCarButton
             // 
-            this.AddCar.Location = new System.Drawing.Point(7, 20);
-            this.AddCar.Name = "AddCar";
-            this.AddCar.Size = new System.Drawing.Size(75, 23);
-            this.AddCar.TabIndex = 0;
-            this.AddCar.Text = "Добавить";
-            this.AddCar.UseVisualStyleBackColor = true;
+            this.AddCarButton.Location = new System.Drawing.Point(7, 20);
+            this.AddCarButton.Name = "AddCarButton";
+            this.AddCarButton.Size = new System.Drawing.Size(75, 23);
+            this.AddCarButton.TabIndex = 0;
+            this.AddCarButton.Text = "Добавить";
+            this.AddCarButton.UseVisualStyleBackColor = true;
             // 
             // PlaceUC
             // 
@@ -189,17 +191,17 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button AbandonButton;
-        private System.Windows.Forms.Button TempReleaseButton;
+        private System.Windows.Forms.Button AbandonPlaceButton;
+        private System.Windows.Forms.Button TempReleasePlaceButton;
         public System.Windows.Forms.Label PlaceNumberLabel;
         public System.Windows.Forms.Label PlaceStatusLabel;
         public System.Windows.Forms.Label DateFromLabel;
         public System.Windows.Forms.Label DateToLabel;
         private System.Windows.Forms.GroupBox PlaceManageGroupBox;
         private System.Windows.Forms.GroupBox CarManageGroupBox;
-        private System.Windows.Forms.Button DeleteCar;
-        private System.Windows.Forms.Button EditCar;
-        private System.Windows.Forms.Button AddCar;
+        private System.Windows.Forms.Button DeleteCarButton;
+        private System.Windows.Forms.Button EditCarButton;
+        private System.Windows.Forms.Button AddCarButton;
         public System.Windows.Forms.DataGridView CarDGV;
     }
 }
