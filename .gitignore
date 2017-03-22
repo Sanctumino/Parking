@@ -1,4 +1,4 @@
 App.config
-.vs/
-bin/
-obj/
+/.vs
+/bin
+/obj

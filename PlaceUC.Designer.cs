@@ -57,7 +57,7 @@
             // PlaceStatusLabel
             // 
             this.PlaceStatusLabel.AutoSize = true;
-            this.PlaceStatusLabel.Location = new System.Drawing.Point(99, 34);
+            this.PlaceStatusLabel.Location = new System.Drawing.Point(129, 34);
             this.PlaceStatusLabel.Name = "PlaceStatusLabel";
             this.PlaceStatusLabel.Size = new System.Drawing.Size(44, 13);
             this.PlaceStatusLabel.TabIndex = 1;

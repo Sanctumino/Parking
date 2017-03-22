@@ -17,6 +17,10 @@ namespace ParkingSystem
         public MainForm()
         {
             InitializeComponent();
+            //Заглушка, чтобы не вводить логин и парол на время разработки
+            Authorization.PersonID = "1";
+            Authorization.RoleID = "2";
+
             if (Authorization.RoleID == "1")
             {
                 Tree.Nodes[0].Nodes["Log"].Remove(); //Удаление определенного узла
