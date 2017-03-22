@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace ParkingSystem
 {
@@ -16,15 +18,21 @@ namespace ParkingSystem
         {
             InitializeComponent();
         }
-
+        
+       /* public string*/
         private void OkButton_Click(object sender, EventArgs e)
         {
-            DateTime DateFrom = dateTimePicker1.Value;
-            DateTime DateTo = dateTimePicker1.Value;
+string DateFrom = dateTimePicker1.Value.ToString();
+           /* DateTime DateTo = dateTimePicker1.Value;
+            Program.DateLeaveFrom = DateFrom.ToString();
+            Program.DateLeaveTo = DateTo.ToString();*/
             PlaceUC PlaceUC = new PlaceUC();
-            PlaceUC.DateFromLabel.Text = "+DateFrom.ToShortDateString()+";
-            PlaceUC.DateToLabel.Text = DateTo.ToShortDateString();
-            this.Close();
+            PlaceUC.DateFromLabel.Text = DateFrom;
+
+            // PlaceUC.Refresh();
+             //CancelButton.Text = DateFrom.ToString();
+             Close();
+
         }
     }
 }

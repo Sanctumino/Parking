@@ -48,10 +48,13 @@ namespace ParkingSystem
             }
         }
 
+        //Освобождение места
         private void TempReleasePlaceButton_Click(object sender, EventArgs e)
         {
             ChooseLeaveDatesForm ChooseDateForm = new ChooseLeaveDatesForm();
-            ChooseDateForm.Show();
+            ChooseDateForm.ShowDialog();
         }
+
+       // public string DateF { set DateFromLabel.Text = value; }
     }
 }

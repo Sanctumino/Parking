@@ -112,6 +112,6 @@
         private System.Windows.Forms.Label DateFrom;
         private System.Windows.Forms.Label DateTo;
         private System.Windows.Forms.Button OkButton;
-        private System.Windows.Forms.Button CancelButton;
+        private new System.Windows.Forms.Button CancelButton;
     }
 }

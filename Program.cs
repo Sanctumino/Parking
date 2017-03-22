@@ -18,5 +18,7 @@ namespace ParkingSystem
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
         }
+        public static string DateLeaveFrom { get; set; }
+        public static string DateLeaveTo { get; set; }
     }
 }
