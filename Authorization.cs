@@ -19,7 +19,7 @@ namespace ParkingSystem
         {
             InitializeComponent();
         }
-        private void login() //Авторизация11123
+        private void login() //Авторизация
         {
             string ConStr = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
             SqlConnection con = new SqlConnection(ConStr);
