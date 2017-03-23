@@ -79,7 +79,7 @@
             this.DateToLabel.Name = "DateToLabel";
             this.DateToLabel.Size = new System.Drawing.Size(51, 13);
             this.DateToLabel.TabIndex = 3;
-            this.DateToLabel.Text = "Дата по:";
+            
             // 
             // AbandonPlaceButton
             // 

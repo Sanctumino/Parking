@@ -17,20 +17,17 @@ namespace ParkingSystem
         public ChooseLeaveDatesForm()
         {
             InitializeComponent();
+            this.OkButton.Click += (o, e) => onDateToClick.Invoke(o, DateToP);
+            this.OkButton.Click += OkButton_Click;
         }
-        
-       /* public string*/
-        private void OkButton_Click(object sender, EventArgs e)
-        {
-string DateFrom = dateTimePicker1.Value.ToString();
-           /* DateTime DateTo = dateTimePicker1.Value;
-            Program.DateLeaveFrom = DateFrom.ToString();
-            Program.DateLeaveTo = DateTo.ToString();*/
-            PlaceUC PlaceUC = new PlaceUC();
-            PlaceUC.DateFromLabel.Text = DateFrom;
 
-            // PlaceUC.Refresh();
-             //CancelButton.Text = DateFrom.ToString();
+        public string DateToP { get => this.dateTimePicker2.Value.ToString(); }
+
+        public event EventHandler<string> onDateToClick;
+
+        public void OkButton_Click(object sender, EventArgs e)
+        {
+      
              Close();
 
         }

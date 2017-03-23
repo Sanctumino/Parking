@@ -14,6 +14,8 @@ namespace ParkingSystem
 {
     public partial class PlaceUC : UserControl
     {
+
+
         public PlaceUC()
         {
             InitializeComponent();
@@ -52,9 +54,11 @@ namespace ParkingSystem
         private void TempReleasePlaceButton_Click(object sender, EventArgs e)
         {
             ChooseLeaveDatesForm ChooseDateForm = new ChooseLeaveDatesForm();
-            ChooseDateForm.ShowDialog();
-        }
 
-       // public string DateF { set DateFromLabel.Text = value; }
+            ChooseDateForm.onDateToClick += (o, date) => this.DateToLabel.Text = date;
+
+            ChooseDateForm.ShowDialog();
+                
+        }
     }
 }

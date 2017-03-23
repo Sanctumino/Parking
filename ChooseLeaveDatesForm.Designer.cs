@@ -30,7 +30,7 @@
         {
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.DateFrom = new System.Windows.Forms.Label();
+            //this.SetDateFrom(new System.Windows.Forms.Label());
             this.DateTo = new System.Windows.Forms.Label();
             this.OkButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
@@ -52,12 +52,12 @@
             // 
             // DateFrom
             // 
-            this.DateFrom.AutoSize = true;
-            this.DateFrom.Location = new System.Drawing.Point(13, 48);
-            this.DateFrom.Name = "DateFrom";
-            this.DateFrom.Size = new System.Drawing.Size(42, 13);
-            this.DateFrom.TabIndex = 10;
-            this.DateFrom.Text = "Дата с";
+        /*    this.GetDateFrom().AutoSize = true;
+            this.GetDateFrom().Location = new System.Drawing.Point(13, 48);
+            this.GetDateFrom().Name = "DateFrom";
+            this.GetDateFrom().Size = new System.Drawing.Size(42, 13);
+            this.GetDateFrom().TabIndex = 10;
+            this.GetDateFrom().Text = "Дата с";*/
             // 
             // DateTo
             // 
@@ -76,7 +76,7 @@
             this.OkButton.TabIndex = 12;
             this.OkButton.Text = "Сохранить";
             this.OkButton.UseVisualStyleBackColor = true;
-            this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
+            
             // 
             // CancelButton
             // 
@@ -95,7 +95,7 @@
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.OkButton);
             this.Controls.Add(this.DateTo);
-            this.Controls.Add(this.DateFrom);
+           // this.Controls.Add(this.GetDateFrom());
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Name = "ChooseLeaveDatesForm";
