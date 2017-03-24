@@ -109,7 +109,7 @@
 
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label DateFrom;
+    //    private System.Windows.Forms.Label DateFrom;
         private System.Windows.Forms.Label DateTo;
         private System.Windows.Forms.Button OkButton;
         private new System.Windows.Forms.Button CancelButton;

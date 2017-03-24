@@ -55,8 +55,8 @@ namespace ParkingSystem
         {
             ChooseLeaveDatesForm ChooseDateForm = new ChooseLeaveDatesForm();
 
-            ChooseDateForm.OnDateToClick += (o, date) => this.DateFromLabel.Text = date;
-            ChooseDateForm.OnDateToClick += (o, date) => this.DateToLabel.Text = date;
+            ChooseDateForm.OnDateToClick1 += (o, date) => this.DateFromLabel.Text = date;
+            ChooseDateForm.OnDateToClick2 += (o, date) => this.DateToLabel.Text = date;
             ChooseDateForm.ShowDialog();
                 
         }

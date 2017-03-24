@@ -19,7 +19,7 @@ namespace ParkingSystem
             InitializeComponent();
             //Заглушка, чтобы не вводить логин и парол на время разработки
             Authorization.PersonID = "1";
-            Authorization.RoleID = "2";
+            Authorization.RoleID = "1";
 
             if (Authorization.RoleID == "1")
             {

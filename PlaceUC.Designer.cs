@@ -66,20 +66,19 @@
             // DateFromLabel
             // 
             this.DateFromLabel.AutoSize = true;
-            this.DateFromLabel.Location = new System.Drawing.Point(246, 34);
+            this.DateFromLabel.Location = new System.Drawing.Point(250, 34);
             this.DateFromLabel.Name = "DateFromLabel";
-            this.DateFromLabel.Size = new System.Drawing.Size(45, 13);
+            this.DateFromLabel.Size = new System.Drawing.Size(51, 13);
             this.DateFromLabel.TabIndex = 2;
-            this.DateFromLabel.Text = "Дата с:";
+            this.DateFromLabel.Text = "Дата по:";
             // 
             // DateToLabel
             // 
             this.DateToLabel.AutoSize = true;
-            this.DateToLabel.Location = new System.Drawing.Point(411, 34);
+            this.DateToLabel.Location = new System.Drawing.Point(370, 34);
             this.DateToLabel.Name = "DateToLabel";
-            this.DateToLabel.Size = new System.Drawing.Size(51, 13);
+            this.DateToLabel.Size = new System.Drawing.Size(0, 13);
             this.DateToLabel.TabIndex = 3;
-            
             // 
             // AbandonPlaceButton
             // 
