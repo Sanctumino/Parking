@@ -57,12 +57,13 @@ namespace ParkingSystem
 
         public void OkButton_Click(object sender, EventArgs e)
         {
-            if (dateTimePicker1.Value > dateTimePicker2.Value)
+            if (dateTimePicker1.Value > dateTimePicker2.Value | dateTimePicker1.Value < DateTime.Now )
             {
                 MessageBox.Show("Ошибка!");
             }
             else
-            { 
+            {
+                FreeParkingPlace();
                 Close();
             }
         }
