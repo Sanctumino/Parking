@@ -17,9 +17,9 @@ namespace ParkingSystem
         public MainForm()
         {
             InitializeComponent();
-            //Заглушка, чтобы не вводить логин и парол на время разработки
+            //Заглушка, чтобы не вводить логин и пароль на время разработки
             Authorization.PersonID = "1";
-            Authorization.RoleID = "1";
+            Authorization.RoleID = "2";
 
             if (Authorization.RoleID == "1")
             {
@@ -29,7 +29,7 @@ namespace ParkingSystem
             Tree.ExpandAll();
         }
 
-        private void Tree_AfterSelect(object sender, TreeViewEventArgs e)
+        private void Tree_AfterSelect(object sender, TreeViewEventArgs e)//Загрузка User Control в зависимости от выбранного узла дерева
         {
             switch(e.Node.Name)
             {
@@ -56,7 +56,7 @@ namespace ParkingSystem
             }
         }
 
-        private void PlaceInfoLoad()
+        private void PlaceInfoLoad()//загрузка информации о парковочном месте пользователя
         {
             string ConStr = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
             SqlConnection con = new SqlConnection(ConStr);
@@ -114,8 +114,7 @@ namespace ParkingSystem
             }
         }
         
-        //Закгрузка информации о машинах пользователя
-        private void CarInfoLoad()
+        private void CarInfoLoad() //Загрузка информации о машинах пользователя
         {
             string ConStr = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
             SqlConnection con = new SqlConnection(ConStr);
@@ -145,11 +144,9 @@ namespace ParkingSystem
             }
         }
 
-
-
-        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e) //закрытие приложения
         {
             Application.Exit();
-        }//закрытие приложения
+        }
     }
 }
