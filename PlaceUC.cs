@@ -60,5 +60,23 @@ namespace ParkingSystem
             ChooseDateForm.ShowDialog();
                 
         }
+
+        private void AddCarButton_Click(object sender, EventArgs e)
+        {
+            AddCarForm AddCarForm = new AddCarForm();
+            AddCarForm.Type = "Add";
+            AddCarForm.ShowDialog();
+        }
+
+        private void EditCarButton_Click(object sender, EventArgs e)
+        {
+            AddCarForm AddCarForm = new AddCarForm();
+            AddCarForm.Type = "Edit";
+            AddCarForm.Text = "Редактировать запись";
+            AddCarForm.MakeTB.Text = CarDGV.CurrentRow.Cells[0].Value.ToString();
+            AddCarForm.ModelTB.Text = CarDGV.CurrentRow.Cells[1].Value.ToString();
+            AddCarForm.CarNumberTB.Text = CarDGV.CurrentRow.Cells[2].Value.ToString();
+            AddCarForm.ShowDialog();
+        }
     }
 }

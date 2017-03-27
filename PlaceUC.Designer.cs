@@ -136,7 +136,6 @@
             this.CarDGV.AllowUserToResizeRows = false;
             this.CarDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.CarDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CarDGV.Enabled = false;
             this.CarDGV.Location = new System.Drawing.Point(7, 50);
             this.CarDGV.MultiSelect = false;
             this.CarDGV.Name = "CarDGV";
@@ -163,6 +162,7 @@
             this.EditCarButton.TabIndex = 1;
             this.EditCarButton.Text = "Редактировать";
             this.EditCarButton.UseVisualStyleBackColor = true;
+            this.EditCarButton.Click += new System.EventHandler(this.EditCarButton_Click);
             // 
             // AddCarButton
             // 
@@ -172,6 +172,7 @@
             this.AddCarButton.TabIndex = 0;
             this.AddCarButton.Text = "Добавить";
             this.AddCarButton.UseVisualStyleBackColor = true;
+            this.AddCarButton.Click += new System.EventHandler(this.AddCarButton_Click);
             // 
             // PlaceUC
             // 

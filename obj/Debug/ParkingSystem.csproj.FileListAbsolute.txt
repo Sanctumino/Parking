@@ -33,3 +33,4 @@ C:\Users\user51\Documents\Parking\obj\Debug\ParkingSystem.MainForm.resources
 C:\Users\user51\Documents\Parking\obj\Debug\ParkingSystem.PlaceUC.resources
 C:\Users\user51\Documents\Parking\obj\Debug\ParkingSystem.Properties.Resources.resources
 C:\Users\user51\Documents\Parking\obj\Debug\ParkingSystem.csproj.GenerateResource.Cache
+C:\Users\user51\Documents\Parking\obj\Debug\ParkingSystem.AddCarForm.resources
