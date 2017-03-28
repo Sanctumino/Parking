@@ -21,6 +21,7 @@ namespace ParkingSystem
             
         }
 
+        //Добавить новую машину 
         private void AddNewCar()
         {
             string ConStr = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
@@ -48,6 +49,34 @@ namespace ParkingSystem
             }
         }
 
+        //Изменить информацию о машине
+        private void EditCar()
+        {
+            string ConStr = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
+            SqlConnection con = new SqlConnection(ConStr);
+            SqlDataReader EditCarReader;
+            try
+            {
+                SqlCommand EditCarSqlCommand = new SqlCommand();
+                SqlDataAdapter EditCarSqlDataAdapter = new SqlDataAdapter();
+                EditCarSqlCommand.CommandText = "EditCar";
+                EditCarSqlCommand.CommandType = CommandType.StoredProcedure;
+                EditCarSqlCommand.Parameters.AddWithValue("@PersonID", Authorization.PersonID);
+                EditCarSqlCommand.Parameters.AddWithValue("@Make", MakeTB.Text);
+                EditCarSqlCommand.Parameters.AddWithValue("@Model", ModelTB.Text);
+                EditCarSqlCommand.Parameters.AddWithValue("@CarNumber", CarNumberTB.Text);
+                EditCarSqlCommand.Connection = con;
+                con.Open();
+                EditCarReader = EditCarSqlCommand.ExecuteReader();
+                EditCarSqlDataAdapter.SelectCommand = EditCarSqlCommand;
+                EditCarReader.Close();
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
         private void AddCarSaveButton_Click(object sender, EventArgs e)
         {
             if (MakeTB.Text == "" | ModelTB.Text == "" | CarNumberTB.Text == "")
@@ -55,8 +84,15 @@ namespace ParkingSystem
                 MessageBox.Show("Все поля должны быть заполнены!");
             }
             else
+                if (Type == "Add")
+                {
+                    AddNewCar();
+                }
+                else
+                {
+                    EditCar();
+                }
             {
-                AddNewCar();
                 Close();
             }
         }
