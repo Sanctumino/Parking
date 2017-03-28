@@ -15,6 +15,7 @@ namespace ParkingSystem
     public partial class AddCarForm : Form
     {
         public static string Type;
+        public static string ID;
         public AddCarForm()
         {
             InitializeComponent();
@@ -61,7 +62,7 @@ namespace ParkingSystem
                 SqlDataAdapter EditCarSqlDataAdapter = new SqlDataAdapter();
                 EditCarSqlCommand.CommandText = "EditCar";
                 EditCarSqlCommand.CommandType = CommandType.StoredProcedure;
-                EditCarSqlCommand.Parameters.AddWithValue("@PersonID", Authorization.PersonID);
+                EditCarSqlCommand.Parameters.AddWithValue("@ID",ID);
                 EditCarSqlCommand.Parameters.AddWithValue("@Make", MakeTB.Text);
                 EditCarSqlCommand.Parameters.AddWithValue("@Model", ModelTB.Text);
                 EditCarSqlCommand.Parameters.AddWithValue("@CarNumber", CarNumberTB.Text);
@@ -77,6 +78,7 @@ namespace ParkingSystem
             }
         }
 
+        
         private void AddCarSaveButton_Click(object sender, EventArgs e)
         {
             if (MakeTB.Text == "" | ModelTB.Text == "" | CarNumberTB.Text == "")

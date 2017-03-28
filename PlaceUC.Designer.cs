@@ -153,6 +153,7 @@
             this.DeleteCarButton.TabIndex = 2;
             this.DeleteCarButton.Text = "Удалить";
             this.DeleteCarButton.UseVisualStyleBackColor = true;
+            this.DeleteCarButton.Click += new System.EventHandler(this.DeleteCarButton_Click);
             // 
             // EditCarButton
             // 
