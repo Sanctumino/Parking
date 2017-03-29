@@ -14,8 +14,6 @@ namespace ParkingSystem
 {
     public partial class PlaceUC : UserControl
     {
-
-
         public PlaceUC()
         {
             InitializeComponent();
