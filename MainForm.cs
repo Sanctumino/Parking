@@ -115,7 +115,7 @@ namespace ParkingSystem
             }
         }
         
-        private void CarInfoLoad() //Загрузка информации о машинах пользователя
+      /*  private void CarInfoLoad() //Загрузка информации о машинах пользователя
         {
             string ConStr = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
             SqlConnection con = new SqlConnection(ConStr);
@@ -143,7 +143,7 @@ namespace ParkingSystem
             {
                 con.Close();
             }
-        }
+        }*/
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e) //закрытие приложения
         {
