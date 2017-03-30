@@ -115,36 +115,6 @@ namespace ParkingSystem
             }
         }
         
-      /*  private void CarInfoLoad() //Загрузка информации о машинах пользователя
-        {
-            string ConStr = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
-            SqlConnection con = new SqlConnection(ConStr);
-            SqlDataReader CarInfoReader;
-            try
-            {
-                SqlCommand CarInfoSQLCommand = new SqlCommand();
-                SqlDataAdapter CarInfoDataAdapter = new SqlDataAdapter();
-                DataSet CarInfoDataSet = new DataSet();
-                CarInfoSQLCommand.CommandText = "CarInfoLoad";
-                CarInfoSQLCommand.CommandType = CommandType.StoredProcedure;
-                CarInfoSQLCommand.Parameters.AddWithValue("@PersonID", Authorization.PersonID);
-                CarInfoSQLCommand.Connection = con;
-                con.Open();
-                CarInfoReader = CarInfoSQLCommand.ExecuteReader();
-                CarInfoDataAdapter.SelectCommand = CarInfoSQLCommand;
-                CarInfoReader.Close();
-                CarInfoDataAdapter.Fill(CarInfoDataSet, "Parking");
-                PlaceUC PlaceUC = new PlaceUC();
-                splitContainer.Panel2.Controls.Clear();
-                splitContainer.Panel2.Controls.Add(PlaceUC);
-                PlaceUC.CarDGV.DataSource = CarInfoDataSet.Tables[0];
-            }
-            finally
-            {
-                con.Close();
-            }
-        }*/
-
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e) //закрытие приложения
         {
             Application.Exit();
