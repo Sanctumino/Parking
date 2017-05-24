@@ -104,10 +104,10 @@ namespace ParkingSystem
                 PlaceUC.DateFromLabel.Text = "Дата с: " + PlaceInfoDataSet.Tables[0].Rows[0][2].ToString();
                 PlaceUC.DateToLabel.Text = "Дата по: " + PlaceInfoDataSet.Tables[0].Rows[0][3].ToString();
                 PlaceUC.CarDGV.DataSource = CarInfoDataSet.Tables[0];
-                PlaceUC.CarDGV.Columns[0].Visible = false;
-                PlaceUC.CarDGV.Columns[1].HeaderCell.Value = "Марка";
-                PlaceUC.CarDGV.Columns[2].HeaderCell.Value = "Модель";
-                PlaceUC.CarDGV.Columns[3].HeaderCell.Value = "Регистрационный номер";
+               // PlaceUC.CarDGV.Columns[0].Visible = false;
+                PlaceUC.CarDGV.Columns[0].HeaderCell.Value = "Марка";
+                PlaceUC.CarDGV.Columns[1].HeaderCell.Value = "Модель";
+                PlaceUC.CarDGV.Columns[2].HeaderCell.Value = "Регистрационный номер";
             }
             finally
             {

@@ -34,3 +34,16 @@ C:\Users\user51\Documents\Parking\obj\Debug\ParkingSystem.PlaceUC.resources
 C:\Users\user51\Documents\Parking\obj\Debug\ParkingSystem.Properties.Resources.resources
 C:\Users\user51\Documents\Parking\obj\Debug\ParkingSystem.csproj.GenerateResource.Cache
 C:\Users\user51\Documents\Parking\obj\Debug\ParkingSystem.AddCarForm.resources
+D:\Parking\bin\Debug\ParkingSystem.exe.config
+D:\Parking\obj\Debug\ParkingSystem.exe
+D:\Parking\obj\Debug\ParkingSystem.pdb
+D:\Parking\bin\Debug\ParkingSystem.exe
+D:\Parking\bin\Debug\ParkingSystem.pdb
+D:\Parking\obj\Debug\ParkingSystem.csprojResolveAssemblyReference.cache
+D:\Parking\obj\Debug\ParkingSystem.AddCarForm.resources
+D:\Parking\obj\Debug\ParkingSystem.Authorization.resources
+D:\Parking\obj\Debug\ParkingSystem.ChooseLeaveDatesForm.resources
+D:\Parking\obj\Debug\ParkingSystem.MainForm.resources
+D:\Parking\obj\Debug\ParkingSystem.PlaceUC.resources
+D:\Parking\obj\Debug\ParkingSystem.Properties.Resources.resources
+D:\Parking\obj\Debug\ParkingSystem.csproj.GenerateResource.Cache

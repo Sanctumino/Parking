@@ -17,8 +17,8 @@ namespace ParkingSystem
         public ChooseLeaveDatesForm()
         {
             InitializeComponent();
-            this.OkButton.Click += (o, e) => OnDateToClick1.Invoke(o, DateToP);
-            this.OkButton.Click += (o, e) => OnDateToClick2.Invoke(o, DateToF);
+          //  this.OkButton.Click += (o, e) => OnDateToClick1.Invoke(o, DateToP);
+          //  this.OkButton.Click += (o, e) => OnDateToClick2.Invoke(o, DateToF);
             this.OkButton.Click += OkButton_Click;           
         }
 
@@ -49,8 +49,8 @@ namespace ParkingSystem
             }
         }
 
-        public string DateToP { get => "Дата с: " + this.dateTimePicker1.Value.ToString("dd.MM.yyyy"); }
-        public string DateToF { get => "Дата по: " + this.dateTimePicker2.Value.ToString("dd.MM.yyyy"); }
+     //   public string DateToP { get => "Дата с: " + this.dateTimePicker1.Value.ToString("dd.MM.yyyy"); }
+     //   public string DateToF { get => "Дата по: " + this.dateTimePicker2.Value.ToString("dd.MM.yyyy"); }
 
         public event EventHandler<string> OnDateToClick1;
         public event EventHandler<string> OnDateToClick2;
