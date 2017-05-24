@@ -30,6 +30,7 @@
         {
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.DateFrom = new System.Windows.Forms.Label();
             this.DateTo = new System.Windows.Forms.Label();
             this.OkButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
@@ -48,6 +49,15 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 9;
+            // 
+            // DateFrom
+            // 
+            this.DateFrom.AutoSize = true;
+            this.DateFrom.Location = new System.Drawing.Point(12, 50);
+            this.DateFrom.Name = "DateTo";
+            this.DateFrom.Size = new System.Drawing.Size(48, 13);
+            this.DateFrom.TabIndex = 11;
+            this.DateFrom.Text = "Дата c";
             // 
             // DateTo
             // 
@@ -83,6 +93,7 @@
             this.ClientSize = new System.Drawing.Size(292, 273);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.OkButton);
+            this.Controls.Add(this.DateFrom);
             this.Controls.Add(this.DateTo);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
@@ -97,7 +108,7 @@
 
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-    //    private System.Windows.Forms.Label DateFrom;
+        private System.Windows.Forms.Label DateFrom;
         private System.Windows.Forms.Label DateTo;
         private System.Windows.Forms.Button OkButton;
         private new System.Windows.Forms.Button CancelButton;
