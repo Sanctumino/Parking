@@ -54,8 +54,8 @@
             // 
             this.DateFrom.AutoSize = true;
             this.DateFrom.Location = new System.Drawing.Point(12, 50);
-            this.DateFrom.Name = "DateTo";
-            this.DateFrom.Size = new System.Drawing.Size(48, 13);
+            this.DateFrom.Name = "DateFrom";
+            this.DateFrom.Size = new System.Drawing.Size(42, 13);
             this.DateFrom.TabIndex = 11;
             this.DateFrom.Text = "Дата c";
             // 
@@ -76,6 +76,7 @@
             this.OkButton.TabIndex = 12;
             this.OkButton.Text = "Сохранить";
             this.OkButton.UseVisualStyleBackColor = true;
+            this.OkButton.Click += new System.EventHandler(this.OkButton_Click_1);
             // 
             // CancelButton
             // 
