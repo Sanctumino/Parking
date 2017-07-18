@@ -105,7 +105,7 @@ namespace ParkingSystem
         private void DeleteCarButton_Click(object sender, EventArgs e)
         {
             string Message = "Вы действительно хотите удалить запись?";
-            string Caption = "Отказ от места";
+            string Caption = "Удаление записи";
             var AbandonResult = MessageBox.Show(Message, Caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (AbandonResult == DialogResult.Yes)
             {
